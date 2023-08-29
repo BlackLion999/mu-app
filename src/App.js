@@ -5,8 +5,8 @@ import NavBar from './components/NavBar/NavBar.js';
 import { Route, Routes } from 'react-router-dom';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Tostify from './components/Tostify/Tostify';
-import Registration from './pages/Register/Register';
-import LogIn from './pages/LogIn/LogIn';
+import Registration from './Pages/Register/Register';
+import LogIn from './Pages/LogIn/LogIn';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
