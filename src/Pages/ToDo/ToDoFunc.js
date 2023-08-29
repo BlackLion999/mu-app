@@ -1,8 +1,8 @@
 import classes from './ToDoFunc.module.css';
 import React, { useEffect, useState } from "react";
-import { useGetAllTasksQuery, useSearchTaskQuery } from "../../store/api";
+import { useGetAllTasksQuery, useSearchTaskQuery } from "../../redux/services/api";
+import { getAllTasks } from "../../redux/features/tasksReducer";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllTasks } from "../../store/taskReducer";
 import Loading from "../../components/Loading/Loading"
 import TaskFunc from "../../components/Tasks/TaskFunc";
 import Confirm from "../../components/Confrim";
@@ -11,7 +11,6 @@ import SearchTaskDropDown from "../../components/SearchDropDown/SearchDropdown";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import AddNewTaskModalFinc from "../../components/AddNewTask/AddNewTaskModalFunc";
 import { useDebounce } from "../../customHook";
-import { container } from 'webpack';
 
 export default function ToDoFanc() {
     const [showNewTaskModal, setShowNewTaskModal] = useState(false);

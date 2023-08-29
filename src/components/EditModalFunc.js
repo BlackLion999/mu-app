@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Modal, Col, Form, Row, FloatingLabel} from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { editTask, putEditedTaskOnList } from '../store/taskReducer';
-import { useEditSelectedTaskMutation } from '../store/api';
+import { editTask, putEditedTaskOnList } from '../redux/features/tasksReducer';
+import { useEditSelectedTaskMutation } from '../redux/services/api';
 
 export default function EditModalFunc() {
     const [sendEditedTask] = useEditSelectedTaskMutation();

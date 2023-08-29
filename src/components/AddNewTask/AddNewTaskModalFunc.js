@@ -2,8 +2,8 @@ import classes from './AddNewTaskModalFunc.module.css'
 import { Button, Modal, Col, Form, Row } from "react-bootstrap";
 import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useAddNewTaskMutation } from "../../store/api";
-import { addNewTask, setSuccessMessage, setErrorMessage } from "../../store/taskReducer";
+import { useAddNewTaskMutation } from "../../redux/services/api";
+import { addNewTask, setSuccessMessage, setErrorMessage } from "../../redux/features/tasksReducer";
 
 export default function AddNewTaskModalFunc({ onClose }) {
     const titleInputRef = useRef();

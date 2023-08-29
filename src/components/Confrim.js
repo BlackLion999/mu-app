@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRemoveCheckedTasksMutation } from '../store/api';
-import { cleanCheckedTassk,getAllTasks } from '../store/taskReducer';
+import { useRemoveCheckedTasksMutation } from '../redux/services/api';
+import { cleanCheckedTassk,getAllTasks } from '../redux/features/tasksReducer';
 import { memo } from 'react';
 
 function Confirm(props) {

@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import { editTask } from '../store/taskReducer';
-import { useGetSingleTaskQuery } from '../store/api';
+import { editTask } from '../redux/features/tasksReducer';
+import { useGetSingleTaskQuery } from '../redux/services/api';
 import EditModalFunc from '../components/EditModalFunc';
 import Loading from '../components/Loading/Loading';
 import request from '../utils/apis'
