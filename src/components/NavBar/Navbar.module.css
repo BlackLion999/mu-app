@@ -1,31 +1,76 @@
-nav {
+.nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-    width: 100%;
-    position: relative;
-    padding: 5px 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+    background-image: linear-gradient(171.8deg, rgba(5, 111, 146, 1) 13.5%, rgba(6, 57, 84, 1) 78.6%);
 }
 
-.items {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.search {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    padding: 4px;
+    border-radius: 10px;
+    background-image: radial-gradient(circle 343px at 46.3% 47.5%, rgb(236, 231, 231) 0%, rgb(236, 219, 219) 72.9%);
 }
 
-.items a:link {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
+.button {
+    width: 100px;
+    height: 30px;
+    margin-right: 20px;
+    font-size: 12px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 3px solid #00d7c3;
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #00d7c3;
 }
 
-.active {
-    color: rgb(33, 250, 88) !important;
+.button:hover {
+    box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+    border: 3px solid #00d7c3;
 }
 
-.navigation-menu {
-    margin-left: auto;
+.header {
+    background: #43C6AC;
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);
+    background: linear-gradient(to right, #F8FFAE, #43C6AC);
+}
+
+.body {
+    background: #43C6AC;
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);
+    background: linear-gradient(to right, #F8FFAE, #43C6AC);
+}
+.group{
+    background: #433d24;
+}
+
+@media (max-width: 375px) {
+    .search {
+        width: 130px;
+        margin: 10px;
+    }
+
+    .button {
+        width: 50px;
+        margin: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 667px) {
+    .search {
+        width: 230px;
+        margin: 10px;
+    }
+
+    .button {
+        width: 50px;
+        margin: 10px;
+        font-size: 10px;
+    }
 }

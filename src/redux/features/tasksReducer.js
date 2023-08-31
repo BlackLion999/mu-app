@@ -35,7 +35,6 @@ const taskSlice = createSlice({
         },
 
         saveCheckedTasks(state, action) {
-
             const id = action.payload;
             const index = state.checkedTasks.indexOf(id);
             if (index === -1) {
@@ -57,10 +56,7 @@ const taskSlice = createSlice({
             state.errorMessage = action.payload
         }
     }
-
-
 })
-
 
 export const {
     getAllTasks,

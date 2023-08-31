@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Button, Card, ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { editTask } from '../redux/features/tasksReducer';
-import { useGetSingleTaskQuery } from '../redux/services/api';
 import EditModalFunc from '../components/EditModalFunc';
 import Loading from '../components/Loading/Loading';
 import request from '../utils/apis'
+import { useGetSingleTaskQuery } from '../redux/services/api';
 
 const REACT_APP_URL_API = process.env.REACT_APP_URL_API;
 
@@ -57,7 +57,7 @@ export default function SingleTask() {
                             className='m-2'
                             variant='danger'
                             onClick={() => handleRemoveSingleTask(id)}>
-                            <FontAwesomeIcon icon={faEdit} />
+                            <FontAwesomeIcon icon={faTrash} />
                         </Button>
                         <Button
                             className='m-2'

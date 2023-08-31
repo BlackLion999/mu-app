@@ -1,4 +1,4 @@
-import classes from './AddNewTaskModalFunc.module.css'
+
 import { Button, Modal, Col, Form, Row } from "react-bootstrap";
 import { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -21,12 +21,10 @@ export default function AddNewTaskModalFunc({ onClose }) {
     }, [])
 
     const handleInputChange = (event) => {
-
         setInputFields(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value
         }));
-
     }
 
     const handleRadioChange = (event) => {

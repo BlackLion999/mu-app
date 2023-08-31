@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ToDoFunc />} />
         <Route path="/task/:id" element={<SingleTask />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/signin" element={<LogIn />} />
         <Route path="*" element={<NoFound />} />

@@ -19,12 +19,10 @@ function Confirm(props) {
                 checkedTasks.forEach(itemId => {
                     newToDoLiST = newToDoLiST.filter(item => item.id !== itemId)
                     console.log('tttttttttttt', newToDoLiST);
-
                 })
                 dispatch(getAllTasks(newToDoLiST));
                 dispatch(cleanCheckedTassk());
                 props.onHide();
-
             })
             .catch((err) => console.log(err));
     }

@@ -22,7 +22,6 @@ export default function LogIn() {
 
     }
 
-
     const handleSignIn = (e)=>{
         e.preventDefault();
         const {email, password} = loginData;
@@ -50,7 +49,7 @@ export default function LogIn() {
                 </Col>
             </Row>
             <Form.Group as={Row} className="mb-3" >
-                <Form.Label column sm="2">Email address</Form.Label>
+                <Form.Label column sm="2">Email</Form.Label>
                 <Col sm="10">
                     <Form.Control
                         value={loginData.email}
@@ -76,5 +75,5 @@ export default function LogIn() {
             </Form.Group>
             <Button type="submit" variant="info" onClick={handleSignIn}>Sign In</Button>
         </Form>
-    )
+    );
 }

@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
-import { UseSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 

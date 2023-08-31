@@ -28,8 +28,6 @@ export const userApi = createApi({
                 },
             })
         })
-
-
     })
 })
 

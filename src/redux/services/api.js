@@ -2,8 +2,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const BASE_URL = process.env.REACT_APP_URL_API;
 console.log('UUUUUUUUUU====>>>', BASE_URL)
 
-
-
 export const apiSLice = createApi({
     reducerPath: 'apiSLice',
     baseQuery: fetchBaseQuery({
@@ -16,7 +14,6 @@ export const apiSLice = createApi({
         getSingleTask: bulder.query({
             query: (id)=> `/tasks/${id}`,
             providesTags: ['SingleTask'],
-
         }),
         searchTask:bulder.query({
             query:(params)=>`/tasks/search?q=${params}`
@@ -47,7 +44,6 @@ export const apiSLice = createApi({
                 },
             }),
             invalidatesTags: ['SingleTask'],
-
         }),
 
         removeCheckedTasks: bulder.mutation({
@@ -60,10 +56,8 @@ export const apiSLice = createApi({
                 },
             })
         })
-
     })
 })
-
 
 export const {
     useGetAllTasksQuery,

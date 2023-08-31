@@ -1,8 +1,8 @@
 import classes from './ToDoFunc.module.css';
 import React, { useEffect, useState } from "react";
 import { useGetAllTasksQuery, useSearchTaskQuery } from "../../redux/services/api";
-import { getAllTasks } from "../../redux/features/tasksReducer";
 import { useSelector, useDispatch } from "react-redux";
+import { getAllTasks } from "../../redux/features/tasksReducer";
 import Loading from "../../components/Loading/Loading"
 import TaskFunc from "../../components/Tasks/TaskFunc";
 import Confirm from "../../components/Confrim";
@@ -11,6 +11,7 @@ import SearchTaskDropDown from "../../components/SearchDropDown/SearchDropdown";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import AddNewTaskModalFinc from "../../components/AddNewTask/AddNewTaskModalFunc";
 import { useDebounce } from "../../customHook";
+import { useNavigate } from 'react-router';
 
 export default function ToDoFanc() {
     const [showNewTaskModal, setShowNewTaskModal] = useState(false);
@@ -18,6 +19,7 @@ export default function ToDoFanc() {
     const [searchText, setSearchText] = useState('');
     const { data, isError, isLoading } = useGetAllTasksQuery();
     const debounced = useDebounce(searchText);
+    const navigate = useNavigate();
 
     const { data: searchResults } = useSearchTaskQuery(debounced);
     const dispatch = useDispatch();
@@ -31,6 +33,13 @@ export default function ToDoFanc() {
         }
     }, [data]);
 
+    useEffect(() => {
+        const tocen = localStorage.getItem('tocen')
+        if (!tocen) {
+            navigate('/signin')
+        }
+    }, [])
+
     const toogleModal = () => {
         setShowNewTaskModal(prev => !prev)
     }
@@ -41,7 +50,7 @@ export default function ToDoFanc() {
     return (
         <>
             {isLoading && <Loading />}
-            <Container>
+            <Container fluid>
                 <Row className="justi fy-content-center">
                     <Col className="text-center mt-5">
                         <Button
@@ -55,25 +64,20 @@ export default function ToDoFanc() {
                     </Col>
                 </Row>
 
-                <Row className="justify-content-center" expand="lg">
-                    <Col className="m-5 w-25" lg="3">
-                        <Form.Control 
-                            className="justify-content-center"
-                            value={searchText}
-                            placeholder="Search"
-                            onChange={handleSearchChange}
-                            aria-label="Search"
-                        />
-                        {
-                            searchResults &&
-                            <Row className="justify-content-center">
-                                <Col className="text-center mt-2" lg="3">
-                                    <SearchTaskDropDown tasks={searchResults} />
-                                </Col>
-                            </Row>
-                        }
+                <Row className="justify-content-center">
+                    <Col className="text-center mt-5" lg="3">
+                        <input type="search" value={searchText} onChange={handleSearchChange} />
                     </Col>
                 </Row>
+                {
+                    searchResults &&
+                    <Row className="justify-content-center">
+                        <Col className="text-center mt-2" lg="3">
+                            <SearchTaskDropDown tasks={searchResults} />
+                        </Col>
+                    </Row>
+                }
+
 
                 <Row className="mt-5">
                     {

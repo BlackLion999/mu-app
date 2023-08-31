@@ -11,12 +11,10 @@ export default function EditModalFunc() {
     const [editedTask, setEditedTask] = useState(taskObj)
 
     const handleInputChange = (event) => {
-
         setEditedTask(prevState => ({
             ...prevState,
             [event.target.name]: event.target.value
         }));
-
     }
 
     const handleRadioChange = (event) => {
@@ -31,7 +29,6 @@ export default function EditModalFunc() {
         if (event.key === "Enter") {
             handleSaveEditedTask();
         }
-
     }
 
     const handleSaveEditedTask = () => {

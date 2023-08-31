@@ -1,13 +1,13 @@
+import classes from './Tasks.module.css';
 import React, { useState } from "react";
+import { useRemoveSingleTaskMutation, useSearchTaskQuery } from "../../redux/services/api";
 import { Button } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
-import classes from './Tasks.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { useRemoveSingleTaskMutation, useSearchTaskQuery } from "../../redux/services/api";
 import { removeSingleTask, editTask, saveCheckedTasks } from "../../redux/features/tasksReducer";
 
 export default function TaskFunc({ item }) {
@@ -17,6 +17,7 @@ export default function TaskFunc({ item }) {
     const [deleteTasks, response] = useRemoveSingleTaskMutation();
 
     const handleRemoveSingleTask = (id) => {
+        console.log('RRRRR', response);
         deleteTasks(id)
             .then((resTest) => {
                 dispatch(removeSingleTask(id))
@@ -65,7 +66,6 @@ export default function TaskFunc({ item }) {
                 >
                     <FontAwesomeIcon icon={faEdit} />
                 </Button>
-
             </Card.Body>
         </Card>
     )
