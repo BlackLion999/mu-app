@@ -83,6 +83,7 @@ export default function LogIn() {
                         onChange={handleOnchange} />
                 </Col>
             </Form.Group>
+            <p><Link to='/register'>Registrated ?</Link></p>
             <Button type="submit" variant="info" onClick={handleSignIn}>Sign In</Button>
         </Form>
     );

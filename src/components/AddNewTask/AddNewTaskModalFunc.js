@@ -66,13 +66,13 @@ export default function AddNewTaskModalFunc({ onClose }) {
             show={true}
             onHide={onClose}
         >
-            <Modal.Header className="bg-info" closeButton>
+            <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
                     Add new task
                 </Modal.Title>
 
             </Modal.Header>
-            <Modal.Body className="bg-info">
+            <Modal.Body>
                 <Form onKeyDown={handleAddKeyDown}>
                     <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
                         <Form.Label column sm={2}>
@@ -159,7 +159,7 @@ export default function AddNewTaskModalFunc({ onClose }) {
                     </fieldset>
                 </Form>
             </Modal.Body>
-            <Modal.Footer className="bg-info">
+            <Modal.Footer>
                 <Button variant='primary' onClick={handleAddNewTask}>Add</Button>
                 <Button variant="secondary" onClick={onClose}>Cansel</Button>
             </Modal.Footer>

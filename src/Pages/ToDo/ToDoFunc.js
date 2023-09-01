@@ -36,7 +36,7 @@ export default function ToDoFanc() {
     useEffect(() => {
         const tocen = localStorage.getItem('tocen')
         if (!tocen) {
-            navigate('/register')
+            navigate('/todo')
         }
     }, [])
 

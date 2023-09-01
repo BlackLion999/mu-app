@@ -52,11 +52,6 @@
 }
 
 @media (max-width: 375px) {
-    .search {
-        width: 130px;
-        margin: 10px;
-    }
-
     .button {
         width: 50px;
         margin: 10px;
@@ -65,11 +60,6 @@
 }
 
 @media (max-width: 667px) {
-    .search {
-        width: 230px;
-        margin: 10px;
-    }
-
     .button {
         width: 50px;
         margin: 10px;
