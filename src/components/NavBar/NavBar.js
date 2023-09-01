@@ -1,9 +1,27 @@
 import classes from "./Navbar.module.css"
 import React, {useState} from "react";
-import { Form, Modal, Nav, NavLink, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form, Modal, Nav, NavLink, Navbar, Button } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {removeToken} from "../../utils/utils";
+import {setAutorization} from "../../redux/features/authReducer";
+import { getToken } from "../../utils/utils";
+
 
 export default function NavBar() {
+
+    const successAuto = useSelector(state => state.userReducer.successAuthorization);
+    const disppatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleSignOut = () => {
+        disppatch(setAutorization(false));
+        removeToken();
+        if(!getToken()){
+            navigate('/register')
+        }
+
+    }
 
     const [show, setShow] = useState(false);
 
@@ -16,12 +34,17 @@ export default function NavBar() {
                 <Navbar.Toggle aria-controls="navbarScroll" data-bs-target="#navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav>
-                        <NavLink eventKey="1" as={Link} to="/">ToDo</NavLink>
-                        <NavLink eventKey="3" as={Link} to="/Home">Home</NavLink>
-                        <NavLink eventKey="2" as={Link} to="/AboutUs">AboutUs</NavLink>
+                        <NavLink eventKey="1" as={Link} to="/">Home</NavLink>
+                        <NavLink eventKey="3" as={Link} to="/todo">ToDo</NavLink>
+                        <NavLink eventKey="2" as={Link} to="/about">AboutUs</NavLink>
                     </Nav>
                 </Navbar.Collapse>
-                <button type="submit" className={classes.button} onClick={handleShow}>Log In</button>
+                {
+                    successAuto ?
+                        <Button className={classes.button} onClick={handleSignOut}>Sign out</Button>
+                        :
+                        <Button type="submit" className={classes.button} onClick={handleShow}><Link to='/signin'>Sing in</Link></Button>
+                }
             </Navbar>
 
             <Modal show={show} onHide={hadleClose}>

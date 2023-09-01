@@ -8,7 +8,7 @@ import TaskFunc from "../../components/Tasks/TaskFunc";
 import Confirm from "../../components/Confrim";
 import EditModalFunc from "../../components/EditModalFunc";
 import SearchTaskDropDown from "../../components/SearchDropDown/SearchDropdown";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import AddNewTaskModalFinc from "../../components/AddNewTask/AddNewTaskModalFunc";
 import { useDebounce } from "../../customHook";
 import { useNavigate } from 'react-router';
@@ -36,7 +36,7 @@ export default function ToDoFanc() {
     useEffect(() => {
         const tocen = localStorage.getItem('tocen')
         if (!tocen) {
-            navigate('/signin')
+            navigate('/register')
         }
     }, [])
 

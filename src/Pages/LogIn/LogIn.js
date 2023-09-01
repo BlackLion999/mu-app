@@ -1,12 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useSignInMutation } from '../../redux/services/userApi';
 import { useNavigate } from 'react-router';
+import { setToken } from '../../utils/utils';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAutorization } from '../../redux/features/authReducer';
+import { Link } from 'react-router-dom';
 
 export default function LogIn() {
+    const successAuto = useSelector((state) => state.userReducer.successAuthorization);
+    const disppatch = useDispatch();
     const [signIn] = useSignInMutation();
     const navigate = useNavigate();
     const [loginData, setLoginData] = useState({
@@ -14,12 +20,17 @@ export default function LogIn() {
         password: ''
     });
 
+    useEffect(()=>{
+        if(successAuto){
+            navigate('/todo');
+        }
+    }, [])
+
     const handleOnchange = (event) => {
         setLoginData(prev => ({
             ...prev,
             [event.target.name]: event.target.value
         }))
-
     }
 
     const handleSignIn = (e)=>{
@@ -31,14 +42,13 @@ export default function LogIn() {
 
         signIn({password})
         .then((res)=>{
-            console.log('rrrrrrrrrrrrrr===>>>', res)
             if(res.error) throw new Error('Sign in field !!!');
             if(res.data.token){
-                localStorage.setItem('token', res.data.token)
-                navigate('/');
+                disppatch(setAutorization(true));
+                setToken(res.data.token);
+                navigate('/todo');
             }
         })
-
     }
 
     return (

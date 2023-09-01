@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .a {
   width: 500px;
   /* height: 500px; */
@@ -36,5 +35,4 @@ code {
   width: 300px;
   height: 150px;
   background-color: green;
-
 }

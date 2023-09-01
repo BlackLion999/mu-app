@@ -61,11 +61,19 @@ export default function EditModalFunc() {
                             Title
                         </Form.Label>
                         <Col sm={10}>
-                            <Form.Control type="text" placeholder="Title" name="title" value={editedTask.title} onChange={handleInputChange} />
+                            <Form.Control 
+                            type="text" 
+                            placeholder="Title" 
+                            name="title" 
+                            value={editedTask.title} 
+                            onChange={handleInputChange} />
                         </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword" onChange={handleInputChange}>
+                    <Form.Group 
+                    as={Row} className="mb-3" 
+                    controlId="formHorizontalPassword" 
+                    onChange={handleInputChange}>
                         <Form.Label column sm={2}>
                             Description
                         </Form.Label>
@@ -89,7 +97,10 @@ export default function EditModalFunc() {
                         </Form.Label>
 
                         <Col sm={10}>
-                            <Form.Select aria-label="Default select example" name="developer" value={editedTask.developer} onChange={handleInputChange}>
+                            <Form.Select 
+                            aria-label="Default select example" 
+                            name="developer" value={editedTask.developer} 
+                            onChange={handleInputChange}>
                                 <option value="">Select a developer</option>
                                 <option value="Aksana">Aksana</option>
                                 <option value="Hovo">Hovo</option>

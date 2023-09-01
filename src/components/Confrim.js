@@ -18,7 +18,6 @@ function Confirm(props) {
                 console.log('obj response', response);
                 checkedTasks.forEach(itemId => {
                     newToDoLiST = newToDoLiST.filter(item => item.id !== itemId)
-                    console.log('tttttttttttt', newToDoLiST);
                 })
                 dispatch(getAllTasks(newToDoLiST));
                 dispatch(cleanCheckedTassk());
