@@ -15,7 +15,7 @@ const REACT_APP_URL_API = process.env.REACT_APP_URL_API;
 
 export default function SingleTask() {
     const [taskData, setTaskData] = useState(null);
-    const editedTask = useSelector((stste) => StaticRange.tasksReducer.taskEditObj);
+    const editedTask = useSelector((state) => StaticRange.tasksReducer.taskEditObj);
     const dispatch = useDispatch();
     const { id } = useParams();
     const { data, isLoading, isError } = useGetSingleTaskQuery(id);

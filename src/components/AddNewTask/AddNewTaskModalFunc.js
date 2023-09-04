@@ -7,7 +7,7 @@ import { addNewTask, setSuccessMessage, setErrorMessage } from "../../redux/feat
 
 export default function AddNewTaskModalFunc({ onClose }) {
     const titleInputRef = useRef();
-    const [addNewTaskRequest, response] = useAddNewTaskMutation();
+    const [addNewTaskRequest] = useAddNewTaskMutation();
     const dispatch = useDispatch();
     const [inputFields, setInputFields] = useState({
         title: "",

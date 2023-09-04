@@ -1,4 +1,5 @@
-.div {
+.div { 
+    position: relative;
     width: 1980px;
     height: 3704px;
     background: linear-gradient(180deg, #010101 -15.71%, #1A0E01 99.57%);
@@ -9,7 +10,7 @@
     width: 425px;
     height: 162px;
     top: 277px;
-    left: 210px;
+    left: 70px;
     color: #FFF;
     font-family: Poppins;
     font-size: 30px;
@@ -23,7 +24,7 @@
     width: 414px;
     height: 95px;
     top: 464px;
-    left: 210px;
+    left: 70px;
     flex-shrink: 0;
     color: #FFF;
     font-family: Poppins;
@@ -38,60 +39,5 @@
     width: 739px;
     height: 656px;
     top: 182px;
-    left: 1019px;
-}
-
-.h6 {
-    position: absolute;
-    width: 237px;
-    height: 45px;
-    top: 921px;
-    left: 110px;
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 180.5%;
-    /* 45.125px */
-}
-
-
-@media (max-width: 375px) {
-    .div {
-        display: block;
-        width: 375px;
-        background: linear-gradient(180deg, #010101 -15.71%, #1A0E01 99.57%);
-    }
-
-    .h1 {
-        width: 200px;
-        height: 300px;
-    }
-
-    .img {
-        width: 339px;
-        height: 256px;
-        margin: 10px;
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 667px) {
-    .div {
-        display: block;
-        width: 667px;
-        background: linear-gradient(180deg, #010101 -15.71%, #1A0E01 99.57%);
-    }
-    .h1 {
-        width: 400px;
-        height: 200px;
-    }
-
-    .img {
-        width: 539px;
-        height: 456;
-        margin: 10px;
-        font-size: 10px;
-    }
+    left: 550px;
 }

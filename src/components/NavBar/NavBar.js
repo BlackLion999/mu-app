@@ -1,5 +1,5 @@
 import classes from "./Navbar.module.css"
-import { Nav, NavLink, Navbar } from "react-bootstrap";
+import { Nav, NavLink, Navbar, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { removeToken } from "../../utils/utils";
@@ -35,13 +35,13 @@ export default function NavBar() {
                 </Navbar.Collapse>
                 {
                     successAuto ?
-                        <button className={classes.button} onClick={handleSignOut}>Sign out</button>
+                        <Button className="w-25 m-2" onClick={handleSignOut}>Sign out</Button>
                         :
-                        <button>
-                            <Link to='/signin' className={classes.button}>
+                        <Button>
+                            <Link to='/signin'className="w-25 m-2">
                                 Sing in
                             </Link>
-                        </button>
+                        </Button>
                 }
             </Navbar>
         </>

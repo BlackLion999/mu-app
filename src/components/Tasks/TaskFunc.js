@@ -1,6 +1,6 @@
 import classes from './Tasks.module.css';
 import React, { useState } from "react";
-import { useRemoveSingleTaskMutation, useSearchTaskQuery } from "../../redux/services/api";
+import { useRemoveSingleTaskMutation } from "../../redux/services/api";
 import { Button } from "react-bootstrap";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -27,7 +27,7 @@ export default function TaskFunc({ item }) {
 
     const toggleCheckbox = (id) => {
         dispatch(saveCheckedTasks(id))
-    }
+    };
 
     return (
         <Card className={`${classes.card} ${isChecked ? classes.checkedTaskCard : ''}`}>

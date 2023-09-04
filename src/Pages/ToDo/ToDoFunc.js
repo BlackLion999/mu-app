@@ -50,7 +50,7 @@ export default function ToDoFanc() {
     return (
         <>
             {isLoading && <Loading />}
-            <Container fluid>
+            <Container className={classes.container} fluid>
                 <Row className="justi fy-content-center">
                     <Col className="text-center mt-5">
                         <Button

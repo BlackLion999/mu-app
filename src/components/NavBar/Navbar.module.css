@@ -6,15 +6,6 @@
     background-image: linear-gradient(171.8deg, rgba(5, 111, 146, 1) 13.5%, rgba(6, 57, 84, 1) 78.6%);
 }
 
-.search {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-    padding: 4px;
-    border-radius: 10px;
-    background-image: radial-gradient(circle 343px at 46.3% 47.5%, rgb(236, 231, 231) 0%, rgb(236, 219, 219) 72.9%);
-}
-
 .button {
     width: 100px;
     height: 30px;
@@ -49,20 +40,4 @@
 }
 .group{
     background: #433d24;
-}
-
-@media (max-width: 375px) {
-    .button {
-        width: 50px;
-        margin: 10px;
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 667px) {
-    .button {
-        width: 50px;
-        margin: 10px;
-        font-size: 10px;
-    }
 }
